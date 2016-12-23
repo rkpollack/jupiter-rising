@@ -42,7 +42,7 @@ while ($line=fgets($page,65535)){
 	$s3="n/a";
 	$s4="n/a";
 }
-$result = "Cooler 1 temperature is ".$s1." degrees. Cooler 2 Temperature is ".$s2." degrees. Cooler 3 temperature is ".$s3." degrees. Cooler 4 Temperature is ".$s4." degrees.";
+$result = "Cooler 1 temp is ".$s1." degrees. Cooler 2 Temperature is ".$s2." degrees. Cooler 3 temperature is ".$s3." degrees. Cooler 4 Temperature is ".$s4." degrees.";
 if (strpos($ort,"arket")>0) $result = "Cooler 1 temperature is ".$m1." degrees. Floor Temperature is ".$m2." degrees.";
 }
 $myarr = array ("speech" => $result, 
