@@ -2,6 +2,7 @@
 header('Content-Type: application/json');
 $data = json_decode(file_get_contents('php://input'), true);
 $ort = $data['result']['parameters']['ort'];
+$nwk = $data['result']['parameters']['nwk'];
 $action = $data['result']['action'];
 $query = $data['result']['resolvedQuery'];
 if ($action == "coosemansSales") {
@@ -47,7 +48,8 @@ $result = "Cooler 1 temperature is ".$s1." degrees. Cooler 2 Temperature is ".$s
 if (strpos($ort,"arket")>0) $result = "Cooler 1 temperature is ".$m1." degrees. Floor Temperature is ".$m2." degrees.";
 }
 if ($action == "produceQuiz") {
-    $url = "http://1webblvd.com/pquiz.php?nwk=5";
+    $url = "http://1webblvd.com/pquiz.php?nwk="."$nwk";
+    
     if(strpos($query,"answer")>0) $url = "http://1webblvd.com/aquiz.php";
     $string = file_get_contents($url);
     $result = $string;    
