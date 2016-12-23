@@ -48,7 +48,8 @@ $result = "Cooler 1 temperature is ".$s1." degrees. Cooler 2 Temperature is ".$s
 if (strpos($ort,"arket")>0) $result = "Cooler 1 temperature is ".$m1." degrees. Floor Temperature is ".$m2." degrees.";
 }
 if ($action == "produceQuiz") {
-    $url = "http://1webblvd.com/pquiz.php?nwk="."$nwk";
+    $snwk = (string) "$nwk";
+    $url = "http://1webblvd.com/pquiz.php?nwk="."$snwk";
     if(strpos($query,"answer")>0) $url = "http://1webblvd.com/aquiz.php";
     $result = file_get_contents($url);
 }
