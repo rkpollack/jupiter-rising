@@ -46,15 +46,9 @@ $result = "Cooler 1 temperature is ".$s1." degrees. Cooler 2 Temperature is ".$s
 if (strpos($ort,"arket")>0) $result = "Cooler 1 temperature is ".$m1." degrees. Floor Temperature is ".$m2." degrees.";
 }
 if ($action == "produceQuiz") {
-    $link = mysql_connect("http://weshipproduce.com","root","bigcigar");
-    mysql_select_db("produce");
-    $result = mysql_query("SELECT week FROM control");
-    $week = mysql_result($result,0);
-    $pweek = $week-1;
-    $result = mysql_query("SELECT quiz,answer FROM quiz WHERE week = '$pweek'");
-    $quiz = mysql_result($result,0,0);
-    $answer = mysql_result($result,0,1);
-    $result = $quiz;
+    $url = "http://1webblvd.com/pquiz.php";
+    $string = file_get_contents($url);
+    $result = $string;    
 }
 $myarr = array ("speech" => $result, 
                 "displayText" => $result,
