@@ -50,7 +50,6 @@ if (strpos($ort,"arket")>0) $result = "Cooler 1 temperature is ".$m1." degrees. 
 if ($action == "produceQuiz") {
     $snwk = "$nwk";
     $url = "http://1webblvd.com/pquiz.php?nwk=2";
-    $url = str_replace(' ', '', $url);
     if(strpos($query,"answer")>0) $url = "http://1webblvd.com/aquiz.php";
     $result = file_get_contents($url);
 }
