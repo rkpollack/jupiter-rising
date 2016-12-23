@@ -3,6 +3,7 @@ header('Content-Type: application/json');
 $data = json_decode(file_get_contents('php://input'), true);
 $ort = $data['result']['parameters']['ort'];
 $action = $data['result']['action'];
+$query = $data['result']['resolvedQuery'];
 if ($action == "coosemansSales") {
     $url = "http://1webblvd.com/shpsls.htm";
     $offset = 3;
@@ -47,6 +48,7 @@ if (strpos($ort,"arket")>0) $result = "Cooler 1 temperature is ".$m1." degrees. 
 }
 if ($action == "produceQuiz") {
     $url = "http://1webblvd.com/pquiz.php";
+    if(strpos($query,"answer")>0) $url = "http://1webblvd.com/aquiz.php";
     $string = file_get_contents($url);
     $result = $string;    
 }
